@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 /* ==== clerk class override ===== */
-.cl-userButtonPopoverActionButtonIcon {
-  color: white;
-}
-
 .cl-logoBox {
   height: 75px;
 }
@@ -24,10 +20,6 @@
 .cl-socialButtonsIconButton img {
   width: 24px;
   height: 24px;
-}
-
-.cl-userButtonPopoverActionButton {
-  color: white;
 }
 
 @layer base {
