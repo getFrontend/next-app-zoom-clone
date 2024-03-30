@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==== clerk class override ===== */
+.cl-userButtonPopoverActionButtonIcon {
+  color: white;
+}
+
+.cl-logoBox {
+  height: 75px;
+}
+
+.cl-dividerLine {
+  background: #2cbfae;
+  height: 2px;
+}
+
+.cl-socialButtonsIconButton {
+  padding-block: 10px;
+  border: 3px solid #2cbfae;
+}
+
+.cl-socialButtonsIconButton img {
+  width: 24px;
+  height: 24px;
+}
+
+.cl-userButtonPopoverActionButton {
+  color: white;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
     <nav className="w-full flex-between fixed z-50 bg-dark-1 px-6 py-4 lg:px-10">
       <Link href="/" className="flex items-center gap-1">
         <Image
-          className="max-sm:w-16"
+          className="max-sm:w-[80px]"
           src="/icons/poom-logo.png"
           alt="Poom logo"
           width={200}
@@ -16,7 +17,10 @@ const Navbar = () => {
       </Link>
 
       <div className="flex-between gap-5">
-        User
+        <SignedIn>
+          <UserButton afterSignOutUrl="/sign-in" />
+        </SignedIn>
+
         <MobileNav />
       </div>
     </nav>
