@@ -26,3 +26,9 @@ export const sidebarLinks = [
     label: "Personal Room",
   },
 ];
+
+export const initialValues = {
+  dateTime: new Date(),
+  description: '',
+  link: '',
+};
