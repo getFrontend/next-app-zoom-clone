@@ -30,7 +30,7 @@ const MobileNav = () => {
         <SheetContent side="left" className="border-none bg-dark-1">
           <Link href="/" className="flex items-center gap-1">
             <Image
-              className="w-[80px]"
+              className="w-[100px]"
               src="/icons/poom-logo.png"
               alt="Poom logo"
               width={200}
@@ -49,7 +49,7 @@ const MobileNav = () => {
                       href={link.route}
                       key={link.label}
                       className={cn(
-                        "w-full max-w-60 p-4 flex gap-4 rounded-lg hover:bg-green-1",
+                        "w-full max-w-64 p-4 px-10 flex gap-4 rounded-lg hover:bg-green-1",
                         {
                           "bg-green-1": isActive,
                         }
