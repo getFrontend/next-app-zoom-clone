@@ -49,9 +49,9 @@ const MobileNav = () => {
                       href={link.route}
                       key={link.label}
                       className={cn(
-                        "w-full max-w-64 p-4 px-10 flex gap-4 rounded-lg hover:bg-green-1",
+                        "w-full max-w-64 p-4 px-10 flex gap-4 rounded-lg hover:bg-green-2",
                         {
-                          "bg-green-1": isActive,
+                          "bg-green-2": isActive,
                         }
                       )}
                     >
