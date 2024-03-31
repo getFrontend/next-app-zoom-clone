@@ -1,4 +1,5 @@
 import MeetingTypeList from "@/components/MeetingTypeList";
+import { Meteors } from "@/components/ui/meteors";
 
 const Home = () => {
   const now = new Date();
@@ -13,16 +14,17 @@ const Home = () => {
 
   return (
     <section className="size-full flex flex-col gap-10 text-white">
-      <div className="h-[300px] w-full rounded-[20px] bg-hero bg-cover">
-        <div className="flex h-full flex-col justify-between max-md:px-5 max-md:py-8 p-6 lg:p-11">
-          <h2 className="glassmorphism max-w-[273px] rounded-xl py-2 text-center text-base font-normal text-dark-1">
+      <div className="relative overflow-hidden h-[300px] w-full rounded-[20px] bg-hero bg-cover">
+        <div className="flex h-full flex-col justify-between items-end max-md:px-5 max-md:py-8 p-6 lg:p-11">
+          <h2 className="glassmorphism max-w-[273px] rounded-xl px-6 py-2 text-center text-base font-normal text-dark-1">
             Upcoming Meeting at: <span className="font-semibold">12:00</span>{" "}
           </h2>
           <div className="flex flex-col gap-2">
-            <h3 className="text-4xl font-extrabold lg:text-7xl">{time}</h3>
-            <p className="text-lg font-medium text-sky-1 lg:text-2xl">{date}</p>
+            <h3 className="text-center text-4xl font-extrabold lg:text-7xl">{time}</h3>
+            <p className="text-center text-lg font-medium text-sky-1 lg:text-2xl">{date}</p>
           </div>
         </div>
+        <Meteors number={33} />
       </div>
 
       <MeetingTypeList />
