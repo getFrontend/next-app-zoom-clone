@@ -10,7 +10,7 @@ import {
   motion,
   animate,
 } from "framer-motion";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C", "#2CBFAE"];
 
@@ -21,6 +21,8 @@ export default function NotFound() {
     );
 
   const color = useMotionValue(COLORS_TOP[0]);
+
+  const router = useRouter();
 
   useEffect(() => {
     animate(color, COLORS_TOP, {
@@ -34,6 +36,10 @@ export default function NotFound() {
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
   const border = useMotionTemplate`1px solid ${color}`;
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
+
+  const clickHandler = () => {
+    router.push("/");
+  };
 
   return (
     <motion.section
@@ -74,8 +80,9 @@ export default function NotFound() {
             </motion.span>
           ))}
         </p>
-        <Link href="/">
+
         <motion.button
+          onClick={clickHandler}
           style={{
             border,
             boxShadow,
@@ -88,7 +95,6 @@ export default function NotFound() {
           Start from HOME
           <FiArrowRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
         </motion.button>
-         </Link>
       </div>
 
       <div className="absolute inset-0 z-0">
