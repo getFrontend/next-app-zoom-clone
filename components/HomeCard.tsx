@@ -22,13 +22,13 @@ const HomeCard = ({
   return (
     <section
       className={cn(
-        "px-6 py-6 flex flex-col justify-between w-full 2xl:min-w-[290px] min-h-[260px] rounded-[14px] cursor-pointer",
+        "group px-6 py-6 flex flex-col justify-between w-full 2xl:min-w-[290px] min-h-[260px] rounded-[14px] cursor-pointer",
         className
       )}
       onClick={handleClick}
     >
-      <div className="flex-center glassmorphism size-12 rounded-[10px]">
-        <Image src={img} alt="meeting" width={27} height={27} />
+      <div className="flex-center glassmorphism size-12 rounded-[10px] group-hover:scale-[1.2] transition-transform duration-300">
+        <Image src={img} alt={title} width={27} height={27} />
       </div>
 
       <div className="flex flex-col gap-2">
