@@ -7,16 +7,18 @@ import { cn } from "@/lib/utils";
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const rows = new Array(150).fill(1);
   const cols = new Array(100).fill(1);
-  let colors = [
-    "--sky-300",
-    "--pink-300",
-    "--green-300",
-    "--yellow-300",
-    "--red-300",
-    "--purple-300",
-    "--blue-300",
-    "--indigo-300",
-    "--violet-300",
+  const colors = [
+    "#0E78F9",
+    "#2cbfae",
+    "#C9DDFF",
+    "#FF742E",
+    "#830EF9",
+    "#F9A90E",
+    "#ffc8dd",
+    "#219ebc",
+    "#e63946",
+    "#ffd166",
+    "#00afb9",
   ];
   const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];

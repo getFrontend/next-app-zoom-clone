@@ -27,8 +27,8 @@ body {
 }
 
 .glassmorphism3 {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 /* ==== clerk class override ===== */
