@@ -11,6 +11,11 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BiSolidSkipPreviousCircle } from "react-icons/bi";
+import { BsRecordCircleFill } from "react-icons/bs";
+import { FaUserLock } from "react-icons/fa";
+import { LuCalendarClock } from "react-icons/lu";
+import { MdDashboard } from "react-icons/md";
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -55,12 +60,19 @@ const MobileNav = () => {
                         }
                       )}
                     >
-                      <Image
-                        src={link.imgURL}
-                        alt={link.label}
-                        width={20}
-                        height={20}
-                      />
+                      <span className="text-3xl text-sky-1">
+                        {link.id === "1" ? (
+                          <MdDashboard />
+                        ) : link.id === "2" ? (
+                          <LuCalendarClock />
+                        ) : link.id === "3" ? (
+                          <BiSolidSkipPreviousCircle />
+                        ) : link.id === "4" ? (
+                          <BsRecordCircleFill />
+                        ) : (
+                          <FaUserLock />
+                        )}
+                      </span>
                       <span className="font-semibold">{link.label}</span>
                     </Link>
                   );

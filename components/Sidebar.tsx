@@ -2,15 +2,13 @@
 
 import { sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BiSolidSkipPreviousCircle } from "react-icons/bi";
 import { BsRecordCircleFill } from "react-icons/bs";
 import { FaUserLock } from "react-icons/fa";
-import { GrSecure } from "react-icons/gr";
 import { LuCalendarClock } from "react-icons/lu";
-import { MdDashboard, MdSpaceDashboard } from "react-icons/md";
+import { MdDashboard } from "react-icons/md";
 
 const Sidebar = () => {
   const pathname = usePathname();

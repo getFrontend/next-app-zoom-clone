@@ -64,6 +64,10 @@ body {
   height: 40px;
 }
 
+.cl-userButtonAvatarBox {
+  border: 3px solid #16a191;
+}
+
 .cl-footerActionLink {
   color: #16a191;
 }
