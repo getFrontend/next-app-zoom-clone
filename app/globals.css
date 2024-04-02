@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  margin: 0;
-  padding: 0;
-}
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .glassmorphism {
@@ -26,6 +27,19 @@
 }
 
 /* ==== clerk class override ===== */
+.cl-internal-180wb59,
+.cl-internal-11ttlho,
+.cl-internal-lqfubk {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+}
+
 .cl-logoBox {
   height: 75px;
 }
@@ -48,6 +62,10 @@
 .cl-avatarBox {
   width: 40px;
   height: 40px;
+}
+
+.cl-footerActionLink {
+  color: #16a191;
 }
 
 /* ======== stream css overrides ======== */

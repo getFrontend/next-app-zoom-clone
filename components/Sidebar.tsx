@@ -5,6 +5,12 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BiSolidSkipPreviousCircle } from "react-icons/bi";
+import { BsRecordCircleFill } from "react-icons/bs";
+import { FaUserLock } from "react-icons/fa";
+import { GrSecure } from "react-icons/gr";
+import { LuCalendarClock } from "react-icons/lu";
+import { MdDashboard, MdSpaceDashboard } from "react-icons/md";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -20,18 +26,25 @@ const Sidebar = () => {
               href={link.route}
               key={link.label}
               className={cn(
-                "p-4 flex gap-4 items-center justify-start rounded-lg hover:bg-green-2",
+                "p-4 flex gap-4 items-center justify-start rounded-lg text-3xl hover:bg-green-2",
                 {
                   "bg-green-2": isActive,
                 }
               )}
             >
-              <Image
-                src={link.imgURL}
-                alt={link.label}
-                width={24}
-                height={24}
-              />
+              <span className="text-3xl text-sky-1">
+                {link.id === "1" ? (
+                  <MdDashboard />
+                ) : link.id === "2" ? (
+                  <LuCalendarClock />
+                ) : link.id === "3" ? (
+                  <BiSolidSkipPreviousCircle />
+                ) : link.id === "4" ? (
+                  <BsRecordCircleFill />
+                ) : (
+                  <FaUserLock />
+                )}
+              </span>
               <span className="text-lg font-semibold max-lg:hidden">
                 {link.label}
               </span>
