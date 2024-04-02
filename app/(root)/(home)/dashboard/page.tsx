@@ -5,7 +5,7 @@ import { Meteors } from "@/components/ui/meteors";
 import MeetingTypeList from "@/components/MeetingTypeList";
 import { IoMdTime } from "react-icons/io";
 
-const Home = () => {
+const DashboardPage = () => {
   const now = new Date();
 
   const time = now.toLocaleTimeString("ua-UA", {
@@ -21,11 +21,9 @@ const Home = () => {
       <div className="relative overflow-hidden h-[300px] w-full rounded-[20px] bg-hero bg-cover">
         <div className="flex h-full flex-col justify-between items-end max-md:px-5 max-md:py-8 p-6 lg:p-11">
           <BackgroundGradient className="glassmorphism flex flex-1 gap-2 items-center max-w-[290px] rounded-[20px] px-6 py-2 text-dark-1">
-              <IoMdTime className="text-lg" />
+            <IoMdTime className="text-lg" />
             <h2 className="text-center text-base font-normal">
-              Upcoming Meeting at: <span className="font-semibold">
-                12:00
-              </span>{" "}
+              Upcoming Meeting at: <span className="font-semibold">12:00</span>{" "}
             </h2>
           </BackgroundGradient>
           <div className="flex flex-col gap-2">
@@ -45,4 +43,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default DashboardPage;
