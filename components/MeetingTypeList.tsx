@@ -6,7 +6,7 @@ import HomeCard from "./HomeCard";
 import MeetingModal from "./MeetingModal";
 import { useUser } from "@clerk/nextjs";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
-import { initialValues } from "@/constants";
+import { homeCards, initialValues } from "@/constants";
 import { useToast } from "./ui/use-toast";
 import { Textarea } from "./ui/textarea";
 import DatePicker from "react-datepicker";
@@ -67,34 +67,24 @@ const MeetingTypeList = () => {
 
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-      <HomeCard
-        img="/icons/add-meeting.svg"
-        title="New Meeting"
-        description="Start an instant meeting"
-        className="bg-blue-1"
-        handleClick={() => setMeetingState("isInstantMeeting")}
-      />
-      <HomeCard
-        img="/icons/schedule.svg"
-        title="Schedule Meeting"
-        description="Plan your meeting"
-        className="bg-yellow-1"
-        handleClick={() => setMeetingState("isScheduleMeeting")}
-      />
-      <HomeCard
-        img="/icons/recordings.svg"
-        title="View Recordings"
-        description="Meeting Recordings"
-        className="bg-green-2"
-        handleClick={() => router.push("/recordings")}
-      />
-      <HomeCard
-        img="/icons/join-meeting.svg"
-        title="Join Meeting"
-        description="Via invitation link"
-        className="bg-orange-1"
-        handleClick={() => setMeetingState("isJoiningMeeting")}
-      />
+      {homeCards.map((card) => (
+        <HomeCard
+          key={card.id}
+          img={card.img}
+          title={card.title}
+          description={card.description}
+          className={card.className}
+          handleClick={
+            card.id === 1
+              ? () => setMeetingState("isInstantMeeting")
+              : card.id === 2
+              ? () => setMeetingState("isScheduleMeeting")
+              : card.id === 3
+              ? () => router.push("/recordings")
+              : () => setMeetingState("isJoiningMeeting")
+          }
+        />
+      ))}
 
       {!callDetail ? (
         <MeetingModal

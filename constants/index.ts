@@ -46,3 +46,34 @@ export const avatarImages = [
   "/images/avatar-5.jpg",
   // "/images/avatar-6.jpg",
 ];
+
+export const homeCards = [
+  {
+    id: 1,
+    img: "/icons/add-meeting.svg",
+    title: "New Meeting",
+    description: "Start an instant meeting",
+    className: "bg-blue-1",
+  },
+  {
+    id: 2,
+    img: "/icons/schedule.svg",
+    title: "Schedule Meeting",
+    description: "Plan your meeting",
+    className: "bg-yellow-1",
+  },
+  {
+    id: 3,
+    img: "/icons/recordings.svg",
+    title: "View Recordings",
+    description: "Meeting Recordings",
+    className: "bg-green-2",
+  },
+  {
+    id: 4,
+    img: "/icons/join-meeting.svg",
+    title: "Join Meeting",
+    description: "Via invitation link",
+    className: "bg-orange-1",
+  },
+];

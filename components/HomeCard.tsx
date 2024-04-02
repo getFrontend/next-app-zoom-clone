@@ -32,8 +32,8 @@ const HomeCard = ({
       </div>
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold">{title}</h1>
-        <p className="text-lg font-normal">{description}</p>
+        <h2 className="text-2xl font-bold">{title}</h2>
+        <p className="text-lg text-dark-1 font-normal">{description}</p>
       </div>
     </section>
   );
