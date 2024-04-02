@@ -11,11 +11,13 @@ import { useToast } from "./ui/use-toast";
 import { Textarea } from "./ui/textarea";
 import DatePicker from "react-datepicker";
 import { Input } from "./ui/input";
+import { AnimatePresence, motion } from "framer-motion";
 
 const MeetingTypeList = () => {
   const [meetingState, setMeetingState] = useState<
     "isScheduleMeeting" | "isJoiningMeeting" | "isInstantMeeting" | undefined
   >(undefined);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [values, setValues] = useState(initialValues);
   const [callDetail, setCallDetail] = useState<Call>();
   const router = useRouter();
@@ -66,24 +68,52 @@ const MeetingTypeList = () => {
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetail?.id}`;
 
   return (
-    <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-      {homeCards.map((card) => (
-        <HomeCard
-          key={card.id}
-          img={card.img}
-          title={card.title}
-          description={card.description}
-          className={card.className}
-          handleClick={
-            card.id === 1
-              ? () => setMeetingState("isInstantMeeting")
-              : card.id === 2
-              ? () => setMeetingState("isScheduleMeeting")
-              : card.id === 3
-              ? () => router.push("/recordings")
-              : () => setMeetingState("isJoiningMeeting")
-          }
-        />
+    <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      {homeCards.map((card, index) => (
+        <div
+          key={card?.title || index}
+          className="relative group-cards block p-2 h-full w-full"
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <AnimatePresence>
+            {hoveredIndex === index && (
+              <motion.span
+                className="absolute inset-0 h-full w-full bg-green-1 block rounded-[20px]"
+                layoutId="hoverBackground"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.15 },
+                }}
+                exit={{
+                  opacity: 0,
+                  transition: { duration: 0.15, delay: 0.2 },
+                }}
+              />
+            )}
+          </AnimatePresence>
+          <div className="rounded-[20px] h-full w-full overflow-hidden border border-transparent relative z-20">
+            <div className="relative z-50">
+              <HomeCard
+                key={card.id}
+                img={card.img}
+                title={card.title}
+                description={card.description}
+                className={card.className}
+                handleClick={
+                  card.id === 1
+                    ? () => setMeetingState("isInstantMeeting")
+                    : card.id === 2
+                    ? () => setMeetingState("isScheduleMeeting")
+                    : card.id === 3
+                    ? () => router.push("/recordings")
+                    : () => setMeetingState("isJoiningMeeting")
+                }
+              />
+            </div>
+          </div>
+        </div>
       ))}
 
       {!callDetail ? (
