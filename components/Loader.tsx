@@ -1,8 +1,12 @@
 import Image from "next/image";
 
-const Loader = () => {
+interface LoaderProps {
+  isSmall?: boolean;
+}
+
+const Loader = ({ isSmall }: LoaderProps) => {
   return (
-    <div className="flex-center h-screen w-full">
+    <div className={`flex-center w-full ${isSmall ? "h-full" : "h-screen"}`}>
       <Image
         src="/icons/loading-circle.svg"
         alt="Loading..."
