@@ -1,12 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+:root {
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  color-scheme: dark;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -108,9 +123,33 @@ body {
   height: 100%;
 }
 
+.str-video__video-preview-container {
+  border-color: #16a191 !important;
+}
+
+/* .str-video__call-controls__button--variant-danger {
+  background-color: #FF742E !important;
+} */
+
 /* .str-video__call-controls__button {
   height: 40px;
 } */
+
+/* Fonts */
+.heading {
+  font-family: var(--font-sora);
+  /* Use Sora font for headings */
+}
+
+.code {
+  font-family: var(--font-code);
+  /* Use Source Code Pro for code blocks */
+}
+
+.custom-text {
+  font-family: var(--font-grotesk);
+  /* Use Space Grotesk for specific elements */
+}
 
 @layer base {
   :root {

@@ -54,22 +54,16 @@ const PersonalRoomPage = () => {
           Start Meeting
         </Button>
         <Button
-          className="bg-dark-3"
+          className="bg-dark-4 px-6 hover:bg-slate-600"
           onClick={() => {
             navigator.clipboard.writeText(meetingLink);
             toast({
-              title: "Link Copied",
+              title: "Invitation Link Copied",
             });
           }}
         >
-          Copy Invitation
-          <Image
-            src="/icons/copy.svg"
-            alt="copy icon"
-            width={13}
-            height={13}
-            className="ml-2"
-          />
+          <Image src="/icons/copy.svg" alt="copy icon" width={20} height={20} />
+          &nbsp; Copy Invitation
         </Button>
       </div>
     </section>

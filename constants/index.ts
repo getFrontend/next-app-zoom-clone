@@ -53,14 +53,14 @@ export const homeCards = [
     img: "/icons/add-meeting.svg",
     title: "New Meeting",
     description: "Start an instant meeting",
-    className: "bg-ua-1",
+    className: "bg-orange-2",
   },
   {
     id: 2,
     img: "/icons/schedule.svg",
     title: "Schedule Meeting",
     description: "Plan your meeting",
-    className: "bg-ua-2",
+    className: "bg-orange-3",
   },
   {
     id: 3,

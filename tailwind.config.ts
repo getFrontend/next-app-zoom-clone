@@ -40,9 +40,11 @@ const config = {
         },
         orange: {
           1: "#FF742E",
+          2: "#0E78F9",
+          3: "#F9A90E",
         },
         ua: {
-          1: "0E78F9",
+          1: "#0E78F9",
           2: "#F9A90E",
         },
         purple: {

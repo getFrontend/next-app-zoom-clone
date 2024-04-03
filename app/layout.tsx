@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Barlow } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Toaster } from "@/components/ui/toaster";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
-import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";
 
 // const inter = Inter({ subsets: ["latin"] });
-const roboto = Barlow({ weight: "400", subsets: ["latin"] });
+const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "POOM - usefull video calling app",
@@ -39,7 +37,6 @@ export default function RootLayout({
       >
         <body className={`${roboto.className} bg-dark-2`}>
           {children}
-          <Toaster />
         </body>
       </ClerkProvider>
     </html>

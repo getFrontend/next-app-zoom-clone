@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "POOM - usefull video calling app",
+  title: "POOM dashboard",
   description:
     "Poom - a lite version of ZOOM, which has the same functionality for private communication!",
 };
