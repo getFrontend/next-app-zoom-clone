@@ -38,7 +38,18 @@ const Main = () => {
         </h1>
         <div className="glassmorphism3 p-2 rounded-2xl flex-center flex-col max-sm:max-w-[300px] lg:rounded-[32px] lg:p-8">
           <p className="text-center mt-5 text-sky-1 relative z-20 text-xl xl:text-3xl">
-            Free video calling app based on Next & Stream
+            Free{" "}
+            <span className="inline-block relative">
+              video calling app
+              <Image
+              src="/icons/curve.png"
+              className="absolute top-full left-0 w-full"
+              width={624}
+              height={28}
+              alt="Curve"
+              />
+            </span>{" "}
+            based on Next & Stream
           </p>
           <p className="text-center mt-5 text-sky-1 relative z-20 text-xl xl:text-3xl">
             It&apos;s simple to use as say:{" "}
@@ -62,7 +73,7 @@ const Main = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="group relative z-20 flex items-center gap-2 w-fit mt-10 py-4 px-6 rounded-2xl bg-green-2 hover:bg-blue-1 text-white uppercase"
+          className="group relative z-20 flex items-center gap-2 w-fit mt-10 py-4 px-6 rounded-2xl bg-green-2 hover:bg-blue-1 text-dark-1 uppercase"
         >
           Get Started
           <FiArrowRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
