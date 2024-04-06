@@ -42,11 +42,11 @@ const Main = () => {
             <span className="inline-block relative text-sky-2">
               video calling app
               <Image
-              src="/icons/curve.png"
-              className="absolute top-full left-0 w-full"
-              width={624}
-              height={28}
-              alt="Curve"
+                src="/icons/curve.png"
+                className="absolute top-full left-0 w-full"
+                width={624}
+                height={28}
+                alt="Curve"
               />
             </span>{" "}
             based on Next & Stream
